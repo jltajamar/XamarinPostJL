@@ -21,7 +21,8 @@ namespace XamarinPostJL
 
         private void SendSMS(object sender, EventArgs e)
         {
-            var call = CrossMessaging.Current.PhoneDialer;
+            var sms = CrossMessaging.Current.SmsMessenger;
+
 
             if (call.CanSendSms)
                 call.SendSms(SMSPhoneNumber.Text, SMSBody.Text);
