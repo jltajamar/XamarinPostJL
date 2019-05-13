@@ -10,8 +10,9 @@ namespace XamarinPostJL
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+             //MainPage = new NavigationPage( new FirstContentPage() );
+}
+            MainPage Main = new MainPage();
         }
 
         

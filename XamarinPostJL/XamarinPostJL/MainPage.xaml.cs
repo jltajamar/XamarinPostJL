@@ -14,17 +14,21 @@ namespace XamarinPostJL
 	{
 		public MainPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             this.LlamadasBtn.Clicked += Llamadas;
             
 
 		}
 
-        private void Llamadas(object sender, EventArgs e)
+        private async void Llamadas(object sender, EventArgs e)
         {
             NavigationPage call = new NavigationPage(new Llamada());
-            call.Title = "Llamadas";
-            Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(call));
+            call.Title = "Llamada";
+            var LlamadaPage = new NavigationPage(call);
+            //Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(call));
+
+            await Application.Current.MainPage.Navigation.PushModalAsync(call);
+            //Navigation.PushAsync(new call());
         }
 
 
