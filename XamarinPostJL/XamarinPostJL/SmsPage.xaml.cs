@@ -16,7 +16,7 @@ namespace XamarinPostJL
 		public SmsPage ()
 		{
 			InitializeComponent ();
-            this.BtnSendSMS.Clicked += SendSMS;
+            this.BtnSMS.Clicked += SendSMS;
         }
 
         private void SendSMS(object sender, EventArgs e)
@@ -24,8 +24,8 @@ namespace XamarinPostJL
             var sms = CrossMessaging.Current.SmsMessenger;
 
 
-            if (call.CanSendSms)
-                call.SendSms(SMSPhoneNumber.Text, SMSBody.Text);
+            if (sms.CanSendSms)
+                sms.SendSms(SMSPhoneNumber.Text, SMSBody.Text);
 
             //throw new NotImplementedException();
         }

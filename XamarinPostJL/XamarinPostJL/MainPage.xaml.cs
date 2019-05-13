@@ -1,31 +1,32 @@
-﻿using Plugin.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace XamarinPostJL
 {
-    public partial class MainPage : ContentPage
-    {
-        public MainPage()
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class MainPage : ContentPage
+	{
+		public MainPage ()
+		{
+			InitializeComponent ();
+            this.LlamadasBtn.Clicked += Llamadas;
+            
+
+		}
+
+        private void Llamadas(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.BtnCall.Clicked += BtnCall_Clicked;
+            NavigationPage call = new NavigationPage(new Llamada());
+            call.Title = "Llamadas";
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(call));
         }
 
-        private void BtnCall_Clicked(object sender, EventArgs e)
-        {
-            var call = CrossMessaging.Current.PhoneDialer;
 
-            if (call.CanMakePhoneCall)
-                call.MakePhoneCall(PhoneNumber.Text);
-
-            //throw new NotImplementedException();
-        }
-
-       
     }
 }

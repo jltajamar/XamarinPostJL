@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinPostJL.View1">
-  <ContentView.Content>
+             x:Class="XamarinPostJL.SmsPage">
+    <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <Image Source="Messages" />
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
@@ -10,7 +10,8 @@
                 <Entry  x:Name="SMSPhoneNumber" Placeholder="(333) 333-3333" />
                 <Label  Text ="Write your body message here"/>
                 <Entry  x:Name="SMSBody" Placeholder="This is a message for your :3!!!" HeightRequest="120"/>
-                <Button x:Name="BtnSendSMS" Text="Send message" BackgroundColor="#71d349" TextColor="White" BorderRadius="10"/>
+                <Button x:Name="BtnSMS" Text="Send message" BackgroundColor="#71d349" TextColor="White" BorderRadius="10"/>
             </StackLayout>
         </StackLayout>
+    </ContentView.Content>
 </ContentView>

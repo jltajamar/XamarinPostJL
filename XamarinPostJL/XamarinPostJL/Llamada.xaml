@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPostJL.Llamada">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,0,0" Orientation="Horizontal">
+            <Image Source="PhoneCall" />
+            <StackLayout Padding="0,0,10,0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <Label Text="Write phone number:" />
+                <Entry x:Name="PhoneNumber" Placeholder="(222) 222-2222"/>
+                <Button x:Name="BtnCall" Text="Call" BackgroundColor="#71d349" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
