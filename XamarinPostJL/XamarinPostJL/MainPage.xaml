@@ -2,13 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinPostJL.MainPage">
-   
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
 
-            <Button Text="Llamar" x:Name="LlamadasBtn" />
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
 
-        </StackLayout>
+                <Image Source="call.png" WidthRequest="40"/>
+            
+            <Label Text="Escriba un número de teléfono:" />
+            <Entry x:Name="PhoneNumber" Placeholder="(000) 000 000 000" />
+            <Label Text ="Llamadas nacionales a 15 céntimos minuto"/>
+
+                <Button Text="Llamar" x:Name="LlamadasBtn" BackgroundColor="gray"/>
+
+                <Image Source="sms.png" WidthRequest="40"/>
+                <Entry x:Name="SMSPhoneNumber" Placeholder="(000) 000 000 000" />
+
+                <Entry x:Name="SMSMessage" Placeholder="Envíe y reciba SMSs nacionales a precio fijo!" HeightRequest="120"/>
+            <Button x:Name="BtnSendSMS" Text="Enviar SMS" BackgroundColor="#71d349" TextColor="White" BorderRadius="10"/>
+
+
+
+                <Image Source="email.png" WidthRequest="40"/>
+                <Label Text="Servicio de emails:" />
+                <Label Text="Destinatario:" />
+            <Entry  x:Name="nEmail" Placeholder="name@askxammy.com" />
+
+            <Label Text="Asunto: " />
+            <Entry x:Name="Subject" Placeholder="Escriba un asunto" />
+                <Label Text="Mensaje: " />
+            <Entry x:Name="Body" Placeholder="Envíe un mensaje" HeightRequest="120"/>
+            <Button x:Name="BtnSendEmail" Text="Send Email" BackgroundColor="#71d349" TextColor="White" BorderRadius="10"/>
+                <Label Text="Llamada de emergencia: " />
+
+                <Button x:Name="Sos" Text="Emergencia" BackgroundColor="red" TextColor="White" BorderRadius="10"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
 </ContentPage>
